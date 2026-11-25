@@ -1,0 +1,12 @@
+/* AcessaData-Health — convencao de desenho proxima a ggplot2::theme_minimal().
+   O D3 continua responsavel pela construcao e interacao do SVG. */
+.chart-svg{background:#fff;color:#4d4d4d}
+.chart-svg .axis path,.chart-svg .axis line{display:none}
+.chart-svg .axis text,.chart-svg .legend text{fill:#4d4d4d;font-weight:400}
+.chart-svg .grid path{display:none}
+.chart-svg .grid line{stroke:#e5e5e5;stroke-width:1;stroke-opacity:1}
+.chart-svg .value-label,.chart-svg .bar-label{fill:#333}
+.chart-svg .zero-line{stroke:#767676;stroke-width:1.4;stroke-dasharray:4 4}
+.viz-source{letter-spacing:.04em}
+.source-grid{grid-template-columns:repeat(auto-fit,minmax(185px,1fr))}
+@media(max-width:650px){.source-grid{grid-template-columns:1fr}}

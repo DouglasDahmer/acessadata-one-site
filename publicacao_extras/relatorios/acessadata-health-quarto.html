@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="AcessaData-ONE">
+
+<title>AcessaData-Health | Leitura científica</title>
+<link rel="stylesheet" href="recursos-csp/quarto-extra-01.css">
+
+
+<script src="acessadata-health-csp-piloto-v2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="acessadata-health-csp-piloto-v2_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="acessadata-health-csp-piloto-v2_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="acessadata-health-csp-piloto-v2_files/libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="acessadata-health-csp-piloto-v2_files/libs/quarto-html/popper.min.js"></script>
+<script src="acessadata-health-csp-piloto-v2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="acessadata-health-csp-piloto-v2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="acessadata-health-csp-piloto-v2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="acessadata-health-csp-piloto-v2_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="acessadata-health-csp-piloto-v2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="acessadata-health-csp-piloto-v2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="acessadata-health-csp-piloto-v2_files/libs/bootstrap/bootstrap-d00bc8e66a4761cd839a5785aef874ca.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="acessadata-quarto.css">
+</head>
+
+<body class="quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Pular para o conteúdo principal</a>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul class="collapse">
+  <li><a href="#fonte-e-validação-das-contagens" id="toc-fonte-e-validação-das-contagens" class="nav-link active" data-scroll-target="#fonte-e-validação-das-contagens">Fonte e validação das contagens</a></li>
+  <li><a href="#composição-das-causas-de-morte-no-rs" id="toc-composição-das-causas-de-morte-no-rs" class="nav-link" data-scroll-target="#composição-das-causas-de-morte-no-rs">Composição das causas de morte no RS</a></li>
+  <li><a href="#estratificações-do-estudo" id="toc-estratificações-do-estudo" class="nav-link" data-scroll-target="#estratificações-do-estudo">Estratificações do estudo</a></li>
+  <li><a href="#método-e-rastreabilidade" id="toc-método-e-rastreabilidade" class="nav-link" data-scroll-target="#método-e-rastreabilidade">Método e rastreabilidade</a></li>
+  <li><a href="#documentação-complementar" id="toc-documentação-complementar" class="nav-link" data-scroll-target="#documentação-complementar">Documentação complementar</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AcessaData-Health | Leitura científica</h1>
+<p class="subtitle lead">Exploração orientada dos resultados epidemiológicos — Rio Grande do Sul, 2024</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>AcessaData-ONE </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Escopo deste relatório
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Este documento apresenta contagens agregadas de registros do <strong>Sistema de Informações sobre Mortalidade (SIM), 2024</strong>, para residentes no Rio Grande do Sul. As contagens apresentadas são <strong>números absolutos de óbitos</strong>; não são indicadores de incidência, prevalência ou taxas padronizadas de mortalidade.</p>
+<p>A leitura utiliza o arquivo JSON analítico existente no projeto. <strong>Não reprocessa o CSV bruto do SIM</strong> e não substitui a auditoria do conjunto de dados original.</p>
+</div>
+</div>
+<section id="fonte-e-validação-das-contagens" class="level2">
+<h2 class="anchored" data-anchor-id="fonte-e-validação-das-contagens">Fonte e validação das contagens</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Reconciliação interna do resumo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A renderização exige que as somas de óbitos por sexo e por faixa etária coincidam com a contagem de óbitos por câncer informada no JSON. Divergências interrompem a geração do relatório, em vez de produzirem gráficos potencialmente inconsistentes.</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Totais agregados utilizados neste relatório.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Indicador</th>
+<th style="text-align: left;">Registros</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Registros processados — Brasil</td>
+<td style="text-align: left;">1.532.015</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Registros processados — RS</td>
+<td style="text-align: left;">101.480</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Óbitos por câncer — RS</td>
+<td style="text-align: left;">21.072</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Óbitos por demais causas — RS</td>
+<td style="text-align: left;">80.408</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="composição-das-causas-de-morte-no-rs" class="level2">
+<h2 class="anchored" data-anchor-id="composição-das-causas-de-morte-no-rs">Composição das causas de morte no RS</h2>
+<section id="visualização" class="level3">
+<h3 class="anchored" data-anchor-id="visualização">Visualização</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Examinar código R</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>composicao <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Categoria =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Câncer"</span>, <span class="st">"Demais causas"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Demais causas"</span>, <span class="st">"Câncer"</span>)),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Obitos =</span> <span class="fu">c</span>(cancer, demais)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Corrige o problema visual: o rótulo é posicionado no centro do PLOT</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># inteiro (incluindo a largura reservada aos nomes das categorias),</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># em vez de ser alinhado somente ao painel interno do eixo X.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>grafico <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(composicao, <span class="fu">aes</span>(<span class="at">x =</span> Obitos, <span class="at">y =</span> Categoria, <span class="at">fill =</span> Categoria)) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.59</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">fmt</span>(Obitos)), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.12</span>, <span class="at">size =</span> <span class="fl">4.2</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"#18354A"</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Demais causas"</span> <span class="ot">=</span> <span class="st">"#10465E"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Câncer"</span> <span class="ot">=</span> <span class="st">"#078DA0"</span>)) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100000</span>, <span class="at">by =</span> <span class="dv">25000</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> fmt,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100000</span>),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Número de óbitos (contagem absoluta)"</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#14354B"</span>, <span class="at">size =</span> <span class="dv">11</span>),</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#14354B"</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">14</span>, <span class="at">r =</span> <span class="dv">20</span>, <span class="at">b =</span> <span class="dv">8</span>, <span class="at">l =</span> <span class="dv">6</span>),</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">11</span>,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                                <span class="at">color =</span> <span class="st">"#14354B"</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                                <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">14</span>))</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>grafico</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-composicao-rs" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Gráfico de barras horizontais: 21.072 óbitos por câncer e 80.408 por demais causas, totalizando 101.480 registros no RS, em 2024.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-composicao-rs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="acessadata-health-csp-piloto-v2_files/figure-html/fig-composicao-rs-1.png" class="img-fluid figure-img" style="width:100.0%" alt="Gráfico de barras horizontais: 21.072 óbitos por câncer e 80.408 por demais causas, totalizando 101.480 registros no RS, em 2024.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-composicao-rs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Composição dos registros de óbitos de residentes no RS segundo a categoria de causa, em 2024.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tabela-de-apoio" class="level3">
+<h3 class="anchored" data-anchor-id="tabela-de-apoio">Tabela de apoio</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Contagens e percentuais derivados dos registros processados do RS.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Número de óbitos</th>
+<th style="text-align: left;">Participação no total do RS (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Câncer</td>
+<td style="text-align: left;">21.072</td>
+<td style="text-align: left;">20.76</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Demais causas</td>
+<td style="text-align: left;">80.408</td>
+<td style="text-align: left;">79.24</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="interpretação" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação">Interpretação</h3>
+<p>Os registros classificados como <strong>câncer</strong> representam 20.76% do total de óbitos de residentes no RS contido neste resumo analítico. A participação é uma <strong>proporção de registros</strong>, não uma taxa de mortalidade populacional. O total das duas categorias corresponde aos 101.480 registros processados do RS.</p>
+</section>
+</section>
+<section id="estratificações-do-estudo" class="level2">
+<h2 class="anchored" data-anchor-id="estratificações-do-estudo">Estratificações do estudo</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Sexo</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Faixa etária</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Códigos CID-10 mais frequentes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Registros de óbitos por câncer por sexo no resumo analítico.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sexo</th>
+<th style="text-align: left;">Óbitos</th>
+<th style="text-align: left;">Participação no total de câncer (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Masculino</td>
+<td style="text-align: left;">11.107</td>
+<td style="text-align: left;">52.71</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Feminino</td>
+<td style="text-align: left;">9.965</td>
+<td style="text-align: left;">47.29</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Registros por faixa etária conforme o JSON analítico.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Faixa etária</th>
+<th style="text-align: left;">Óbitos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">00–19</td>
+<td style="text-align: left;">94</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">20–39</td>
+<td style="text-align: left;">576</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">40–59</td>
+<td style="text-align: left;">3.708</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">60–79</td>
+<td style="text-align: left;">11.839</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">80+</td>
+<td style="text-align: left;">4.855</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Dez códigos CID-10 presentes no resumo. Os dez não representam todos os óbitos por câncer.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Código CID-10</th>
+<th style="text-align: left;">Óbitos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C34</td>
+<td style="text-align: left;">3.609</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C18</td>
+<td style="text-align: left;">1.596</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C50</td>
+<td style="text-align: left;">1.433</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C25</td>
+<td style="text-align: left;">1.389</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C61</td>
+<td style="text-align: left;">1.283</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C22</td>
+<td style="text-align: left;">924</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C15</td>
+<td style="text-align: left;">857</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C16</td>
+<td style="text-align: left;">856</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C71</td>
+<td style="text-align: left;">717</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C67</td>
+<td style="text-align: left;">518</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="método-e-rastreabilidade" class="level2">
+<h2 class="anchored" data-anchor-id="método-e-rastreabilidade">Método e rastreabilidade</h2>
+<section id="etapas-desta-visualização" class="level3">
+<h3 class="anchored" data-anchor-id="etapas-desta-visualização">Etapas desta visualização</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Etapas realizadas pelo código deste documento; não substituem o pipeline do estudo original.</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Etapa</th>
+<th style="text-align: left;">Procedimento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1. Leitura</td>
+<td style="text-align: left;">Carregamento do arquivo JSON local do projeto.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Validação</td>
+<td style="text-align: left;">Verificação de tipos, totais e concordância dos estratos.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3. Cálculo</td>
+<td style="text-align: left;">Cálculo de demais causas e percentuais com base nas contagens disponíveis.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4. Visualização</td>
+<td style="text-align: left;">Construção de gráficos e tabelas por R/ggplot2/knitr.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="verificações-desta-renderização" class="level3">
+<h3 class="anchored" data-anchor-id="verificações-desta-renderização">Verificações desta renderização</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Controles internos executados sobre o arquivo JSON agregado.</caption>
+<colgroup>
+<col style="width: 63%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Verificação</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Óbitos por câncer não superam registros do RS</td>
+<td style="text-align: left;">Conferido na renderização</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Soma dos estratos por sexo</td>
+<td style="text-align: left;">Conferido na renderização</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Soma dos estratos por idade</td>
+<td style="text-align: left;">Conferido na renderização</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dez códigos CID-10 distintos</td>
+<td style="text-align: left;">Conferido na renderização</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Aviso</span>Limitações e interpretação responsável
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>As contagens são referentes a <strong>óbitos registrados</strong>, e não a novos casos de câncer.</li>
+<li>Não foram calculadas aqui taxas específicas ou padronizadas por população.</li>
+<li>Os resultados são descritivos e <strong>não demonstram causalidade</strong>.</li>
+<li>Este relatório consome um resumo agregado; não constitui reprocessamento nem auditoria independente da base bruta.</li>
+<li>As tabelas e figuras <strong>não equivalem automaticamente a uma tabulação oficial do TABNET</strong>.</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Limites explícitos desta apresentação.</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Escopo</th>
+<th style="text-align: left;">Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fonte</td>
+<td style="text-align: left;">Arquivo JSON agregado derivado do estudo SIM/RS 2024.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indicadores</td>
+<td style="text-align: left;">Contagens absolutas e percentuais, sem padronização populacional.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Inferência</td>
+<td style="text-align: left;">Não são feitas afirmações de causalidade ou inferência causal.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reprodução</td>
+<td style="text-align: left;">Resultados dependem dos dados JSON e versões locais dos pacotes R.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="documentação-complementar" class="level2">
+<h2 class="anchored" data-anchor-id="documentação-complementar">Documentação complementar</h2>
+<p>Consulte a <a href="https://douglasdahmer.github.io/acessadata-health-auditoria/">página de auditoria e documentação do AcessaData-Health no GitHub Pages</a>. O conteúdo publicado ali é uma documentação complementar; os critérios e conjuntos analisados devem ser verificados individualmente antes de comparar resultados de diferentes fases do projeto.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript" src="recursos-csp/quarto-extra-02.js"></script>
+  <script type="application/javascript" src="recursos-csp/quarto-extra-03.js"></script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

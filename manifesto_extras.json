@@ -1,0 +1,146 @@
+{
+  "origem": "SITE-AP-08-H",
+  "total": 35,
+  "arquivos": [
+    {
+      "arquivo": "_redirects",
+      "sha256": "B195771B3774DDDBCC027D734DDC41BFACF85AD0571077C571810C5FE00A6201"
+    },
+    {
+      "arquivo": "assets/acessadata-health-story-link.css",
+      "sha256": "5137189DFE8BA04AA16229AC641A57EA13FCB0DD0B7B14A600058AB4C7F49400"
+    },
+    {
+      "arquivo": "assets/portfolio-v5.css",
+      "sha256": "B63412467AE83DE5AD74CE53990581E88B464055CBA96E21793C658F0E21F1A6"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/figure-html/fig-composicao-rs-1.png",
+      "sha256": "373C6C38625E0ED9E5E2B01C01EC4DED1747FD2CD940FB0149026EC6F9A8D89E"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/bootstrap/bootstrap-d00bc8e66a4761cd839a5785aef874ca.min.css",
+      "sha256": "A0960B082F5A3E2B8367C45E4C8BA4D4A60B8A6BBF81FFC5CE9442FB5AB7CCF5"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/bootstrap/bootstrap-icons.css",
+      "sha256": "01253947F506E030589E4F33FC7EC7CCDFB9505E2E596DEDF16445F12E243C0A"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/bootstrap/bootstrap-icons.woff",
+      "sha256": "F55513B7B591CB84A3B87FF0E34EA24D4831D6FEDC22E54B911CA64B5B544A15"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/bootstrap/bootstrap.min.js",
+      "sha256": "D2EA6C1E0CABCA20D18E924B25A1CD0187C38BA7C33F60AB06E1B0402B9BCDB5"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/clipboard/clipboard.min.js",
+      "sha256": "E17A1D816E13C0826E0ED7FEBFABC3277F45571234BDE0BF9120829A7169EDC9"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/anchor.min.js",
+      "sha256": "69098E105D990F834CFF1B7886D873444228FF63C590E5FF834D568F1115ED8B"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/popper.min.js",
+      "sha256": "4D50586B184724D39DDFE0F6582861664EDDD5E806E5A79E0DBAA832361414D0"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css",
+      "sha256": "954F2FE7D16CD08D8950C5B69D9F5DF61FD26D11ED45D4573EEB6C7C0800EF13"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/quarto.js",
+      "sha256": "FF69FFF180226F37A042E27A4046CA1F6D585B3E454452E27D3549161F7070FD"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/scrollable-regions/scrollable-regions.js",
+      "sha256": "B2F956903F5B9C36742454E74D37571F96ECEEDAD7B0B603ABC9FAC713CF992E"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/tabsets/tabsets.js",
+      "sha256": "A9C226BF70E82EAF5476F619CECFB70B4446B87CE4D1634D6404B0B2BA006D15"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/tippy.css",
+      "sha256": "5969F497D9158D7682F8219C6F13FA67269CDF5BF50A3931D95327151DEE5678"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-csp-piloto-v2_files/libs/quarto-html/tippy.umd.min.js",
+      "sha256": "41181EEEC6D7BA64CB9165F0E95563E34E026BDE79E7C13AEEC83270429B6FAE"
+    },
+    {
+      "arquivo": "relatorios/acessadata-health-quarto.html",
+      "sha256": "92884FC221EB55EF5BB4D0A1765FFA10B16CCC3450B5525A6C019FA93765CCC3"
+    },
+    {
+      "arquivo": "relatorios/acessadata-quarto.css",
+      "sha256": "BDD5FF548C6F42C31C097765486A37A93B9C01454A84FC0BF6DBC6A7FF967B1B"
+    },
+    {
+      "arquivo": "relatorios/recursos-csp/quarto-extra-01.css",
+      "sha256": "D59AE692EA40726F4489EE0C5CC051F82939927870FF5E3553912CFAAC6504CD"
+    },
+    {
+      "arquivo": "relatorios/recursos-csp/quarto-extra-02.js",
+      "sha256": "B039A77DD291DFC620CDB255B2B17439CD4EEEFAEB76FF083D1F2C2FBB02E374"
+    },
+    {
+      "arquivo": "relatorios/recursos-csp/quarto-extra-03.js",
+      "sha256": "1A14A2200CEC0277BC05FA2A6F8202066A8FE2B02C200061C3C2692FC095CF99"
+    },
+    {
+      "arquivo": "storytelling/assets/ggplot2-theme.css",
+      "sha256": "BF0B378818FA49A8113FAF551FA59A34FC531285B025E6A6026FCD75A8E4CEEC"
+    },
+    {
+      "arquivo": "storytelling/assets/logo-horizontal-oficial.png",
+      "sha256": "66D278CE6070CEE4ACD482733AD4ADAA7045A52F17A0A43D814CA3EC9FBAD731"
+    },
+    {
+      "arquivo": "storytelling/assets/logo-oficial.css",
+      "sha256": "DE04260137BEC0FD1D2C0F3A50B8252C4EA1FBDA77EB7F126E1939B1159271A7"
+    },
+    {
+      "arquivo": "storytelling/assets/story.css",
+      "sha256": "5AAD78B59C96C4F5104D2D70A5F5231FF84E27866E0226855EB0DFEDB3599922"
+    },
+    {
+      "arquivo": "storytelling/assets/story.js",
+      "sha256": "68CC2CDDF9028CF5E605BC1AAF36FF96B47A52E227F5C82F19C0B3B0FAD4DC40"
+    },
+    {
+      "arquivo": "storytelling/data/apc_cr2.csv",
+      "sha256": "7A21ED98BA8FBF4EEC5F795EFF3D7BB84CDDD017287027F9DA07751472278FF5"
+    },
+    {
+      "arquivo": "storytelling/data/conciliacao_anual.csv",
+      "sha256": "A59E72A90FCA27806E8D964E7D98DAA8CAA0F21D9D5DC141DD95679F7CDBF891"
+    },
+    {
+      "arquivo": "storytelling/data/confronto_tabnet.csv",
+      "sha256": "EE22127673088EAB8343DE29D0B95D9F1518DBCB358D8B7B8DC219B20C990A92"
+    },
+    {
+      "arquivo": "storytelling/data/pesos_padrao_rs_2024.csv",
+      "sha256": "D5D6CB27FB0CB411D11D5D6F61323BF3404AAEFF91D173F1A3A1404FD7352747"
+    },
+    {
+      "arquivo": "storytelling/data/proveniencia.json",
+      "sha256": "D4CF18CB1078F60CEDDD4C8584C9036C3D0BA2F0C1A0EFCC93651A950C287ADA"
+    },
+    {
+      "arquivo": "storytelling/data/story.json",
+      "sha256": "EFEF28050AEFD0601F8D92E74D42B06285DCE61EF3ADAA0357512BC84D7335F8"
+    },
+    {
+      "arquivo": "storytelling/index.html",
+      "sha256": "F600102EABE2740B2AF991396BD0CEA66E0C7A27B033FE7D567F23DE78FFA154"
+    },
+    {
+      "arquivo": "storytelling/vendor/d3.min.js",
+      "sha256": "F2094BBF6141B359722C4FE454EB6C4B0F0E42CC10CC7AF921FC158FCEB86539"
+    }
+  ]
+}

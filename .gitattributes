@@ -1,0 +1,20 @@
+# Politica de terminacoes de linha - AcessaData-ONE
+* text=auto
+
+.gitattributes text eol=lf
+.gitignore text eol=lf
+_headers text eol=lf
+
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+*.png binary
+*.webp binary
+*.mp4 binary
+# Recursos estaticos homologados: preservar bytes, sem lint de whitespace
+publicacao_extras/** -text -whitespace

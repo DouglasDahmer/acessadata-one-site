@@ -1,0 +1,13 @@
+{
+  "versao_fonte": "v0.2.0",
+  "fonte_git": "https://github.com/DouglasDahmer/acessadata-health-auditoria/releases/tag/v0.2.0",
+  "arquivos": {
+    "apc_cr2.csv": "7a21ed98ba8fbf4eec5f795eff3d7bb84cddd017287027f9da07751472278ff5",
+    "conciliacao_anual.csv": "a59e72a90fca27806e8d964e7d98daa8caa0f21d9d5dc141dd95679f7cdbf891",
+    "confronto_tabnet.csv": "ee22127673088eab8343de29d0b95d9f1518dbcb358d8b7b8dc219b20c990a92",
+    "pesos_padrao_rs_2024.csv": "d5d6cb27fb0cb411d11d5d6f61323bf3404aaeff91d173f1a3a1404fd7352747",
+    "series_anuais_sexo_2015_2024.csv": "396a1cc14dfa1bfe40145bf26a7d55182d5922ee6dde2ba836f2bd8cbba8a1b5"
+  },
+  "snapshot_story_json_sha256": "efef28050aefd0601f8d92e74d42b06285dce61ef3adaa0357512bc84d7335f8",
+  "observacao": "Arquivos CSV transcritos da tag publicada e validados localmente. Nao incluir dados identificaveis."
+}

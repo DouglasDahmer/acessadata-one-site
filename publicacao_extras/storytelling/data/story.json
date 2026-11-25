@@ -1,0 +1,353 @@
+{
+  "meta": {
+    "titulo": "Da contagem à interpretação — AcessaData-Health",
+    "release": "v0.2.0",
+    "release_url": "https://github.com/DouglasDahmer/acessadata-health-auditoria/releases/tag/v0.2.0",
+    "fonte": "SIM/Ministério da Saúde e projeções populacionais IBGE; agregados publicados no release v0.2.0",
+    "periodo": "2015–2024",
+    "recorte": "óbitos por neoplasias malignas (CID-10 C00–C97), residentes no RS",
+    "nota": "Estudo técnico preliminar; não revisado por pares. A publicação de agregados não reproduz o processamento integral dos microdados."
+  },
+  "fase1_2024": {
+    "fonte": "Resumo local da Fase 1 do portfólio AcessaData-ONE, não oriundo dos CSVs públicos do release v0.2.0.",
+    "obitos_rs_todas_causas": 101480,
+    "obitos_rs_cancer": 21072,
+    "obitos_rs_demais_causas": 80408,
+    "top_cid10_tres_caracteres": [
+      {
+        "codigo": "C34",
+        "descricao": "Brônquios e pulmão",
+        "obitos": 3609
+      },
+      {
+        "codigo": "C18",
+        "descricao": "Cólon",
+        "obitos": 1596
+      },
+      {
+        "codigo": "C50",
+        "descricao": "Mama",
+        "obitos": 1433
+      },
+      {
+        "codigo": "C25",
+        "descricao": "Pâncreas",
+        "obitos": 1389
+      },
+      {
+        "codigo": "C61",
+        "descricao": "Próstata",
+        "obitos": 1283
+      },
+      {
+        "codigo": "C22",
+        "descricao": "Fígado e vias biliares intra-hepáticas",
+        "obitos": 924
+      },
+      {
+        "codigo": "C15",
+        "descricao": "Esôfago",
+        "obitos": 857
+      },
+      {
+        "codigo": "C16",
+        "descricao": "Estômago",
+        "obitos": 856
+      },
+      {
+        "codigo": "C71",
+        "descricao": "Encéfalo",
+        "obitos": 717
+      },
+      {
+        "codigo": "C67",
+        "descricao": "Bexiga",
+        "obitos": 518
+      }
+    ],
+    "nota": "Proporção entre os óbitos de residentes registrados no recorte; não é taxa de mortalidade populacional nem incidência de câncer."
+  },
+  "resumo_2015_2024": {
+    "total": 194368,
+    "classificados": 194349,
+    "nao_classificados": 19,
+    "estratos": 380
+  },
+  "series": [
+    {
+      "ano": 2015,
+      "sexo": "Feminino",
+      "obitos": 8228,
+      "populacao": 5688372,
+      "taxa_bruta": 144.6459549411,
+      "taxa_padronizada": 160.6815600285
+    },
+    {
+      "ano": 2015,
+      "sexo": "Masculino",
+      "obitos": 9865,
+      "populacao": 5382339,
+      "taxa_bruta": 183.2846277427,
+      "taxa_padronizada": 262.937843567
+    },
+    {
+      "ano": 2016,
+      "sexo": "Feminino",
+      "obitos": 8338,
+      "populacao": 5709062,
+      "taxa_bruta": 146.0485102456,
+      "taxa_padronizada": 158.4159872472
+    },
+    {
+      "ano": 2016,
+      "sexo": "Masculino",
+      "obitos": 10071,
+      "populacao": 5400714,
+      "taxa_bruta": 186.4753438157,
+      "taxa_padronizada": 260.2976570693
+    },
+    {
+      "ano": 2017,
+      "sexo": "Feminino",
+      "obitos": 8618,
+      "populacao": 5726090,
+      "taxa_bruta": 150.5040961634,
+      "taxa_padronizada": 159.6962551214
+    },
+    {
+      "ano": 2017,
+      "sexo": "Masculino",
+      "obitos": 10360,
+      "populacao": 5414984,
+      "taxa_bruta": 191.3209715855,
+      "taxa_padronizada": 259.6732630532
+    },
+    {
+      "ano": 2018,
+      "sexo": "Feminino",
+      "obitos": 8728,
+      "populacao": 5740657,
+      "taxa_bruta": 152.0383468303,
+      "taxa_padronizada": 157.6845718891
+    },
+    {
+      "ano": 2018,
+      "sexo": "Masculino",
+      "obitos": 10351,
+      "populacao": 5426874,
+      "taxa_bruta": 190.7359559113,
+      "taxa_padronizada": 252.1323683909
+    },
+    {
+      "ano": 2019,
+      "sexo": "Feminino",
+      "obitos": 9151,
+      "populacao": 5754837,
+      "taxa_bruta": 159.0140606936,
+      "taxa_padronizada": 161.3210427287
+    },
+    {
+      "ano": 2019,
+      "sexo": "Masculino",
+      "obitos": 10514,
+      "populacao": 5439509,
+      "taxa_bruta": 193.2895046226,
+      "taxa_padronizada": 249.1772670757
+    },
+    {
+      "ano": 2020,
+      "sexo": "Feminino",
+      "obitos": 8796,
+      "populacao": 5768602,
+      "taxa_bruta": 152.4806183543,
+      "taxa_padronizada": 151.1758025516
+    },
+    {
+      "ano": 2020,
+      "sexo": "Masculino",
+      "obitos": 10164,
+      "populacao": 5451684,
+      "taxa_bruta": 186.4378052726,
+      "taxa_padronizada": 234.3510197348
+    },
+    {
+      "ano": 2021,
+      "sexo": "Feminino",
+      "obitos": 8922,
+      "populacao": 5773931,
+      "taxa_bruta": 154.522109807,
+      "taxa_padronizada": 150.2233786002
+    },
+    {
+      "ano": 2021,
+      "sexo": "Masculino",
+      "obitos": 10651,
+      "populacao": 5453858,
+      "taxa_bruta": 195.2929467544,
+      "taxa_padronizada": 240.3248232391
+    },
+    {
+      "ano": 2022,
+      "sexo": "Feminino",
+      "obitos": 9385,
+      "populacao": 5772043,
+      "taxa_bruta": 162.5940763089,
+      "taxa_padronizada": 155.0000514383
+    },
+    {
+      "ano": 2022,
+      "sexo": "Masculino",
+      "obitos": 10844,
+      "populacao": 5448463,
+      "taxa_bruta": 199.0286067832,
+      "taxa_padronizada": 240.4837638805
+    },
+    {
+      "ano": 2023,
+      "sexo": "Feminino",
+      "obitos": 9600,
+      "populacao": 5774114,
+      "taxa_bruta": 166.2592737171,
+      "taxa_padronizada": 154.9945212617
+    },
+    {
+      "ano": 2023,
+      "sexo": "Masculino",
+      "obitos": 10691,
+      "populacao": 5448178,
+      "taxa_bruta": 196.2307398914,
+      "taxa_padronizada": 231.030887574
+    },
+    {
+      "ano": 2024,
+      "sexo": "Feminino",
+      "obitos": 9965,
+      "populacao": 5778778,
+      "taxa_bruta": 172.4413016039,
+      "taxa_padronizada": 156.8949377451
+    },
+    {
+      "ano": 2024,
+      "sexo": "Masculino",
+      "obitos": 11107,
+      "populacao": 5451137,
+      "taxa_bruta": 203.7556568474,
+      "taxa_padronizada": 232.4768677649
+    }
+  ],
+  "conciliacao": [
+    {
+      "ano": 2015,
+      "total": 18094,
+      "classificados": 18093,
+      "diferenca": 1
+    },
+    {
+      "ano": 2016,
+      "total": 18409,
+      "classificados": 18409,
+      "diferenca": 0
+    },
+    {
+      "ano": 2017,
+      "total": 18979,
+      "classificados": 18978,
+      "diferenca": 1
+    },
+    {
+      "ano": 2018,
+      "total": 19085,
+      "classificados": 19079,
+      "diferenca": 6
+    },
+    {
+      "ano": 2019,
+      "total": 19665,
+      "classificados": 19665,
+      "diferenca": 0
+    },
+    {
+      "ano": 2020,
+      "total": 18960,
+      "classificados": 18960,
+      "diferenca": 0
+    },
+    {
+      "ano": 2021,
+      "total": 19579,
+      "classificados": 19573,
+      "diferenca": 6
+    },
+    {
+      "ano": 2022,
+      "total": 20234,
+      "classificados": 20229,
+      "diferenca": 5
+    },
+    {
+      "ano": 2023,
+      "total": 20291,
+      "classificados": 20291,
+      "diferenca": 0
+    },
+    {
+      "ano": 2024,
+      "total": 21072,
+      "classificados": 21072,
+      "diferenca": 0
+    }
+  ],
+  "tendencias": [
+    {
+      "sexo": "Feminino",
+      "modelo": "Linear",
+      "apc": -0.4144,
+      "inferior": -0.8788,
+      "superior": 0.0522,
+      "p": "0,0702",
+      "gl": 4.47
+    },
+    {
+      "sexo": "Masculino",
+      "modelo": "Linear",
+      "apc": -1.6318,
+      "inferior": -1.9945,
+      "superior": -1.2677,
+      "p": "<0,001",
+      "gl": 4.47
+    },
+    {
+      "sexo": "Feminino",
+      "modelo": "Indicadores 2020/2021",
+      "apc": -0.3219,
+      "inferior": -1.4009,
+      "superior": 0.7689,
+      "p": "0,174",
+      "gl": 1.05
+    },
+    {
+      "sexo": "Masculino",
+      "modelo": "Indicadores 2020/2021",
+      "apc": -1.5972,
+      "inferior": -1.9736,
+      "superior": -1.2192,
+      "p": "<0,001",
+      "gl": 3.86
+    }
+  ],
+  "tabnet": [
+    {
+      "ano": 2022,
+      "sim_local": 20234,
+      "tabnet": 20234,
+      "diferenca": 0
+    },
+    {
+      "ano": 2023,
+      "sim_local": 20291,
+      "tabnet": 20291,
+      "diferenca": 0
+    }
+  ],
+  "pop_padrao_total": 11229915
+}

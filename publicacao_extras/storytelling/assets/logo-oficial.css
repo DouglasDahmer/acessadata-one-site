@@ -1,0 +1,28 @@
+/* Identidade oficial AcessaData-ONE, aplicada somente ao cabeçalho. */
+.site-header .brand { display:flex; align-items:center; gap:14px; min-width:0; }
+.site-header .brand-logo-oficial {
+  display:block; flex:0 0 191px; width:191px; height:auto;
+  object-fit:contain; object-position:center; max-width:none;
+}
+.site-header .brand-health {
+  border-left:1px solid #d5e6e4; padding-left:13px; min-width:0;
+}
+.site-header .brand-health strong {
+  display:block; color:#087e79; font-size:1.32rem; font-weight:800; line-height:1.2;
+}
+.site-header .brand-health small { display:block; }
+@media (max-width: 1050px) {
+  .site-header .brand-logo-oficial { width:162px; flex-basis:162px; }
+  .site-header .brand-health small { display:none; }
+}
+@media (max-width: 650px) {
+  .site-header .brand { gap:9px; }
+  .site-header .brand-logo-oficial { width:139px; flex-basis:139px; }
+  .site-header .brand-health { padding-left:9px; }
+  .site-header .brand-health strong { font-size:1.08rem; }
+}
+
+/* Navegacao institucional: logotipo leva a pagina inicial do mesmo dominio. */
+.site-header a.brand { text-decoration: none; cursor: pointer; color: var(--navy); }
+.site-header a.brand:hover .brand-health strong { color: #066b68; }
+.site-header a.brand:focus-visible { outline: 3px solid #047bc6; outline-offset: 4px; border-radius: 6px; }

@@ -1,0 +1,107 @@
+{
+  "title": "AcessaData-Health | Mortalidade por câncer no RS (2024)",
+  "scope": "Registros de residentes do Rio Grande do Sul identificados no estudo a partir do SIM 2024.",
+  "source_name": "Sistema de Informações sobre Mortalidade (SIM) — Mortalidade Geral 2024",
+  "source_url": "https://dadosabertos.saude.gov.br/dataset/sim/resource/f0bdf83f-708e-4de9-9582-959055844ae9",
+  "source_collection": "https://dadosabertos.saude.gov.br/dataset/sim",
+  "period": "2024",
+  "processed_national": 1532015,
+  "processed_rs": 101480,
+  "cancer_deaths_rs": 21072,
+  "sex": [
+    {
+      "label": "Masculino",
+      "deaths": 11107
+    },
+    {
+      "label": "Feminino",
+      "deaths": 9965
+    }
+  ],
+  "ages": [
+    {
+      "label": "00–19",
+      "deaths": 94
+    },
+    {
+      "label": "20–39",
+      "deaths": 576
+    },
+    {
+      "label": "40–59",
+      "deaths": 3708
+    },
+    {
+      "label": "60–79",
+      "deaths": 11839
+    },
+    {
+      "label": "80+",
+      "deaths": 4855
+    }
+  ],
+  "top_codes": [
+    {
+      "code": "C34",
+      "deaths": 3609
+    },
+    {
+      "code": "C18",
+      "deaths": 1596
+    },
+    {
+      "code": "C50",
+      "deaths": 1433
+    },
+    {
+      "code": "C25",
+      "deaths": 1389
+    },
+    {
+      "code": "C61",
+      "deaths": 1283
+    },
+    {
+      "code": "C22",
+      "deaths": 924
+    },
+    {
+      "code": "C15",
+      "deaths": 857
+    },
+    {
+      "code": "C16",
+      "deaths": 856
+    },
+    {
+      "code": "C71",
+      "deaths": 717
+    },
+    {
+      "code": "C67",
+      "deaths": 518
+    }
+  ],
+  "pipeline": [
+    "Leitura incremental do arquivo DO24OPEN.csv, com blocos de 25 mil linhas.",
+    "Filtro por residência no Rio Grande do Sul e seleção das categorias de câncer usadas na análise.",
+    "Agregação por código CID-10, sexo e faixa etária.",
+    "Exportação dos resultados para arquivos Parquet.",
+    "Conferência de totalizações em DuckDB e teste automatizado local relatado."
+  ],
+  "checks": [
+    "21.072 registros agregados por câncer no RS, conforme processamento anterior.",
+    "11.107 + 9.965 = 21.072 na estratificação por sexo.",
+    "94 + 576 + 3.708 + 11.839 + 4.855 = 21.072 na estratificação etária.",
+    "Validação SQL em DuckDB relatada no projeto; reprodução em R planejada, ainda não comprovada."
+  ],
+  "limitations": [
+    "Os números foram informados a partir de uma execução anterior do projeto; esta publicação estática não reprocessa o CSV bruto.",
+    "Critérios de seleção e tratamento de dados devem ser publicados com scripts versionados para reprodução independente.",
+    "São contagens de óbitos no conjunto analisado, não taxas de mortalidade ajustadas pela população.",
+    "Uma comparação temporal ou entre regiões requer revisão dos denominadores e padronização por idade.",
+    "As contagens não demonstram causalidade e não substituem publicações oficiais ou avaliação epidemiológica especializada."
+  ],
+  "study_status": "Estudo técnico em desenvolvimento; resultados sujeitos a revisão metodológica e reprodução independente.",
+  "prepared_from": "Agregados informados no desenvolvimento da AcessaData-Health; sem acesso ao CSV bruto nesta versão do site."
+}

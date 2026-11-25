@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data storytelling interativo com D3.js sobre mortalidade por neoplasias malignas no Rio Grande do Sul, 2015–2024. Dados agregados e auditáveis.">
+  <title>Da contagem à interpretação | AcessaData-Health</title>
+  <link rel="stylesheet" href="assets/story.css">
+  <link rel="stylesheet" href="assets/logo-oficial.css">
+  <link rel="stylesheet" href="assets/ggplot2-theme.css">
+  <script src="vendor/d3.min.js" defer></script>
+  <script src="assets/story.js" defer></script>
+</head>
+<body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Voltar à página inicial da AcessaData-ONE"><img class="brand-logo-oficial" src="assets/logo-horizontal-oficial.png" alt="" width="2048" height="658" decoding="async"><div class="brand-health"><strong>Health</strong><small>Uma pesquisa em dados, método e evidências</small></div></a>
+    <nav aria-label="Navegação da página"><a href="#historia">Explorar</a><a href="#metodologia">Métodos</a><a href="#fontes">Fontes</a></nav>
+    <span class="header-label">NARRATIVA INTERATIVA · D3.JS</span>
+  </div>
+</header>
+<main id="conteudo">
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span> DATA STORYTELLING · FASES 1 + 2</div>
+    <h1 id="hero-title">Da contagem <em>à interpretação.</em></h1>
+    <p class="hero-lede">O que os registros de mortalidade revelam — e o que não permitem concluir — sobre as neoplasias malignas no Rio Grande do Sul?</p>
+    <div class="hero-buttons"><a class="primary" href="#historia">Explorar a narrativa <span aria-hidden="true">↘</span></a><a class="secondary" href="https://github.com/DouglasDahmer/acessadata-health-auditoria/releases/tag/v0.2.0" target="_blank" rel="noopener noreferrer">Consultar a versão científica</a></div>
+    <p class="hero-foot">SIM / Ministério da Saúde · CID-10 C00–C97 · residentes do RS · período 2015–2024</p>
+  </section>
+
+  <section class="snapshot" aria-label="Indicadores resumidos">
+    <div class="container numbers">
+      <div class="number-item"><span class="number">194.368</span><span>Óbitos identificados no período</span></div>
+      <div class="number-item"><span class="number">194.349</span><span>Óbitos nos estratos analíticos</span></div>
+      <div class="number-item"><span class="number">10 anos</span><span>Séries históricas, 2015–2024</span></div>
+      <div class="number-item"><span class="number">380</span><span>Estratos auditados na pesquisa</span></div>
+    </div>
+  </section>
+
+  <section class="section-intro container" id="historia">
+    <div class="eyebrow">UMA NARRATIVA EM SETE CAPÍTULOS</div>
+    <h2>Dados não falam sozinhos.<br><em>É o método que orienta a leitura.</em></h2>
+    <p>Comece pela fotografia de 2024. Em seguida, observe como as conclusões mudam quando incorporamos o tempo, a população, a idade e a incerteza estatística.</p>
+  </section>
+
+  <section class="story-grid container" aria-label="Exploração guiada da pesquisa">
+    <div class="story-steps" aria-label="Capítulos da narrativa" id="passos">
+      <button class="story-step active" type="button" data-step="0" aria-pressed="true"><span class="step-index">01 / RECORTE</span><strong>Quantos óbitos?</strong><span>Primeiro, o que significam os 21.072 óbitos por câncer identificados em 2024.</span></button>
+      <button class="story-step" type="button" data-step="1" aria-pressed="false"><span class="step-index">02 / CID-10</span><strong>Quais grupos se destacam?</strong><span>Dez códigos CID-10 de três caracteres com as maiores contagens em 2024.</span></button>
+      <button class="story-step" type="button" data-step="2" aria-pressed="false"><span class="step-index">03 / SÉRIE</span><strong>O tempo muda a leitura</strong><span>As contagens por sexo aumentaram, mas ainda não consideramos o denominador.</span></button>
+      <button class="story-step" type="button" data-step="3" aria-pressed="false"><span class="step-index">04 / POPULAÇÃO</span><strong>Contagem não é taxa</strong><span>Compare taxas brutas anuais por 100 mil habitantes.</span></button>
+      <button class="story-step" type="button" data-step="4" aria-pressed="false"><span class="step-index">05 / IDADE</span><strong>Controlando a composição etária</strong><span>Veja o contraste com as taxas padronizadas por idade.</span></button>
+      <button class="story-step" type="button" data-step="5" aria-pressed="false"><span class="step-index">06 / INCERTEZA</span><strong>Qual tendência é sustentada?</strong><span>Estimativas APC e intervalos de confiança do modelo linear CR2.</span></button>
+      <button class="story-step" type="button" data-step="6" aria-pressed="false"><span class="step-index">07 / AUDITORIA</span><strong>E o que ficou de fora?</strong><span>Conciliação dos registros e limites de reprodutibilidade.</span></button>
+    </div>
+    <div class="viz-stage">
+      <div class="viz-card">
+        <div class="viz-topline"><span id="chapter-index">CAPÍTULO 01 / 07</span><span class="viz-source">DADOS AGREGADOS · V0.2.0 · VISUAL GGPLOT2</span></div>
+        <h3 id="chart-title">Óbitos no Rio Grande do Sul — 2024</h3>
+        <p id="chart-deck" class="chart-deck">Uma fotografia do total de mortes registradas no RS, com destaque para as neoplasias malignas.</p>
+        <div class="controls" id="controls" aria-label="Filtros da visualização" hidden>
+          <fieldset class="sex-filters"><legend>Mostrar séries</legend><div class="filter-pills"><button type="button" data-sex="Ambos" class="selected" aria-pressed="true">Ambos</button><button type="button" data-sex="Feminino" aria-pressed="false">Feminino</button><button type="button" data-sex="Masculino" aria-pressed="false">Masculino</button></div></fieldset>
+          <div class="year-control"><label for="ano">Ano em destaque: <output id="ano-label" for="ano">2024</output></label><input id="ano" type="range" min="2015" max="2024" value="2024" step="1"></div>
+        </div>
+        <div class="chart-wrap"><div id="chart" class="chart" aria-live="off"><p class="fallback-msg">O gráfico D3 será exibido após a instalação local da biblioteca. Os dados e a interpretação permanecem disponíveis abaixo.</p></div></div>
+        <p id="chart-summary" class="chart-summary" aria-live="polite">Em 2024, 21.072 óbitos por neoplasias malignas foram identificados entre 101.480 óbitos de residentes do RS, no recorte analisado.</p>
+        <p class="chart-caution" id="chart-caution">Não confunda esta proporção com uma taxa de mortalidade populacional.</p>
+        <div class="chart-actions"><button type="button" id="show-data" aria-expanded="false" aria-controls="data-panel">Ver tabela acessível</button><span>Fonte verificável no final da página</span></div>
+        <div id="data-panel" hidden><div class="table-scroll"><table id="data-table"><caption id="table-caption">Dados do gráfico</caption><thead></thead><tbody></tbody></table></div></div>
+        <div class="pager"><button type="button" id="prev" disabled>← Anterior</button><span id="pager-state">01 de 07</span><button type="button" id="next">Próximo capítulo →</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="interpretation container" aria-labelledby="interpret-title">
+    <div class="eyebrow">PONTO DE CHEGADA</div>
+    <h2 id="interpret-title">O que podemos concluir — <em>com cautela.</em></h2>
+    <div class="interpret-grid">
+      <article><span class="interpret-icon" aria-hidden="true">01</span><h3>As contagens aumentaram</h3><p>Entre 2015 e 2024, houve aumento de óbitos classificados em ambos os sexos. Isso não equivale, por si só, ao aumento do risco populacional.</p></article>
+      <article><span class="interpret-icon" aria-hidden="true">02</span><h3>As taxas contam outra história</h3><p>As taxas brutas aumentaram entre os extremos, mas as taxas padronizadas por idade ficaram menores em 2024 que em 2015. Isso não isola quantitativamente o efeito do envelhecimento.</p></article>
+      <article><span class="interpret-icon" aria-hidden="true">03</span><h3>A inferência depende do modelo</h3><p>Na especificação linear com CR2/Satterthwaite, a estimativa masculina ficou abaixo de zero e a feminina apresentou intervalo compatível com zero.</p></article>
+    </div>
+  </section>
+
+  <section class="method-bg" id="metodologia"><div class="container methodology">
+    <div><div class="eyebrow">METODOLOGIA E ÉTICA</div><h2>Transparência antes<br>de conclusões.</h2><p>O storytelling não substitui o relatório científico. Ele é uma camada de leitura construída sobre tabelas agregadas publicadas e um recorte de 2024 do portfólio local.</p><a class="secondary" href="https://douglasdahmer.github.io/acessadata-health-auditoria/analise_epidemiologica.html" target="_blank" rel="noopener noreferrer">Ler a análise epidemiológica</a></div>
+    <div class="method-items"><details open><summary>População-padrão</summary><p>Taxas padronizadas por método direto, com pesos da população conjunta do RS em 2024. Não é uma padronização mundial. O storytelling consome as taxas publicadas; não recalcula toda a padronização a partir de microdados.</p></details><details><summary>Registros sem classificação completa</summary><p>Dos 194.368 óbitos de 2015–2024, 194.349 foram incluídos nas séries por sexo/idade e 19 ficaram fora dessas séries, mas permanecem no total geral.</p></details><details><summary>Limites inferenciais</summary><p>Dez anos de observação; possíveis dependências temporais; resultados de 2020–2021 não autorizam inferências causais; confirmação documental da posição dos campos dos CSVs sem cabeçalho de 2022–2023 ainda pendente.</p></details><details><summary>Reprodutibilidade e auditoria</summary><p>Os CSVs agregados e a reconciliação estão no release público v0.2.0. As inferências CR2 e a padronização foram verificadas no projeto científico original; os agregados publicados não permitem repetir integralmente o processamento dos microdados.</p></details></div>
+  </div></section>
+
+  <section class="sources container" id="fontes"><div class="eyebrow">EVIDÊNCIAS E REFERÊNCIAS</div><h2>Verifique os dados. Examine o código.</h2><p>Todo valor apresentado na narrativa tem origem identificável. Os arquivos CSV utilizados estão em <code>data/</code>, e a transformação em JSON é reproduzível.</p><div class="source-grid">
+      <a href="/relatorios/acessadata-health-quarto.html"><strong>Quarto v2 · 2024</strong><span>Relatorio revisado e homologado →</span></a><a href="https://github.com/DouglasDahmer/acessadata-health-auditoria/releases/tag/v0.2.0" target="_blank" rel="noopener noreferrer"><strong>Release v0.2.0</strong><span>Dados agregados e documentação →</span></a><a href="https://douglasdahmer.github.io/acessadata-health-auditoria/analise_epidemiologica.html" target="_blank" rel="noopener noreferrer"><strong>Fase 2 · Epidemiologia</strong><span>Resultados, métodos e limites →</span></a><a href="https://github.com/DouglasDahmer/acessadata-health-auditoria" target="_blank" rel="noopener noreferrer"><strong>Repositório</strong><span>Quarto, R, Python, auditoria →</span></a><a href="data/proveniencia.json"><strong>Manifesto dos dados</strong><span>Hashes SHA-256 locais →</span></a></div><p class="caveat">Publicação técnica preliminar, não revisada por pares. Dados de mortalidade, não de incidência ou prevalência. Não devem ser interpretados como diagnóstico clínico, estimativa causal ou avaliação isolada de políticas públicas.</p></section>
+</main>
+<footer><div class="container footer-inner"><span><strong>AcessaData—Health</strong> · Data storytelling experimental em D3.js</span><span>AcessaData-ONE · RS · 2015–2024</span></div></footer>
+</body>
+</html>

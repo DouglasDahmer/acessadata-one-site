@@ -1,0 +1,146 @@
+{
+  "title": "AcessaData-ONE | Data · Innovation · Technology",
+  "description": "AcessaData-ONE: Análise de Dados, pipelines analíticos, qualidade e desenvolvimento tecnológico acessível. Conheça nossos serviços, projetos e visão de futuro.",
+  "email": "acessadataone@gmail.com",
+  "founder": "Douglas H.S. Dahmer",
+  "services": [
+    {
+      "number": "01",
+      "icon": "analytics",
+      "tag": "INTELIGÊNCIA DE NEGÓCIO",
+      "name": "Análise de Dados",
+      "description": "Transformação de dados em indicadores, visualizações e relatórios claros para apoiar decisões.",
+      "items": [
+        "Análise exploratória e limpeza",
+        "Indicadores, dashboards e relatórios",
+        "Python, SQL e visualizações"
+      ],
+      "anchor": "analise-de-dados",
+      "client_problem": "Planilhas dispersas, dúvidas sobre os números e dificuldade para acompanhar indicadores.",
+      "delivery": "Base tratada, indicadores definidos e relatório ou visualização com metodologia documentada."
+    },
+    {
+      "number": "02",
+      "icon": "pipeline",
+      "tag": "ENGENHARIA ANALÍTICA",
+      "name": "Pipelines de Dados",
+      "description": "Estruturação de fluxos reproduzíveis para coletar, tratar, integrar e disponibilizar dados.",
+      "items": [
+        "ETL / ELT e automações",
+        "Transformações e modelos de dados",
+        "Documentação e testes"
+      ],
+      "anchor": "pipelines",
+      "client_problem": "Atualizações manuais demoradas e informações espalhadas em várias fontes.",
+      "delivery": "Pipeline de ingestão e transformação, testes e documentação para execução e manutenção."
+    },
+    {
+      "number": "03",
+      "icon": "quality",
+      "tag": "CONFIABILIDADE",
+      "name": "Qualidade e Validação",
+      "description": "Verificação sistemática de cálculos, consistência, integridade e rastreabilidade.",
+      "items": [
+        "Regras e testes de qualidade",
+        "Auditoria de resultados",
+        "Controle de versões e evidências"
+      ],
+      "anchor": "qualidade",
+      "client_problem": "Resultados divergentes, dados incompletos ou regras de negócio sem validação.",
+      "delivery": "Diagnóstico de consistência, regras automatizadas de verificação e relatório de limitações."
+    }
+  ],
+  "projects": [
+    {
+      "kind": "PESQUISA APLICADA",
+      "name": "AcessaData-Health",
+      "lead": "Análise epidemiológica de dados públicos sobre mortalidade por câncer no Rio Grande do Sul.",
+      "tags": [
+        "Python",
+        "DuckDB",
+        "Parquet",
+        "Epidemiologia"
+      ],
+      "state": "Estudo técnico em desenvolvimento · resultados agregados disponíveis",
+      "style": "health",
+      "figure": "21.072",
+      "figure_note": "óbitos por câncer analisados · RS, 2024",
+      "anchor": "acessadata-health",
+      "case_study_url": "/storytelling/"
+    },
+    {
+      "kind": "DESENVOLVIMENTO DE SOFTWARE",
+      "name": "verificação e rastreabilidade",
+      "lead": "Biblioteca independente para verificação de resultados computacionais, auditoria de cálculos e rastreabilidade de evidências.",
+      "tags": [
+        "Rust",
+        "Testes automatizados",
+        "Auditoria",
+        "Proveniência"
+      ],
+      "state": "Protótipo técnico em desenvolvimento",
+      "style": "ide",
+      "figure": "Verificação",
+      "figure_note": "auditoria e validação de resultados",
+      "anchor": "adveri"
+    }
+  ],
+  "steps": [
+    {
+      "n": "01",
+      "title": "Entender o problema",
+      "desc": "Definir objetivos, fontes e indicadores relevantes."
+    },
+    {
+      "n": "02",
+      "title": "Construir a solução",
+      "desc": "Organizar dados, pipelines e análises reproduzíveis."
+    },
+    {
+      "n": "03",
+      "title": "Verificar resultados",
+      "desc": "Testar qualidade, limites e consistência dos cálculos."
+    },
+    {
+      "n": "04",
+      "title": "Entregar com clareza",
+      "desc": "Apresentar documentação, visualizações e próximos passos."
+    }
+  ],
+  "branches": [
+    {
+      "target": "servicos",
+      "name": "Serviços",
+      "summary": "Dados e pipelines"
+    },
+    {
+      "target": "projetos",
+      "name": "Projetos",
+      "summary": "Portfólio e pesquisa"
+    },
+    {
+      "target": "futuro",
+      "name": "Bioinformática",
+      "summary": "Visão de futuro"
+    },
+    {
+      "target": "metodo",
+      "name": "Método",
+      "summary": "Qualidade e testes"
+    },
+    {
+      "target": "sobre",
+      "name": "Sobre",
+      "summary": "Nossos princípios"
+    },
+    {
+      "target": "contato",
+      "name": "Contato",
+      "summary": "Vamos conversar"
+    }
+  ],
+  "phone_display": "(51) 99431-3154",
+  "phone_e164": "5551994313154",
+  "cnpj": "69.899.726/0001-04",
+  "legal_name": "ACESSADATA-ONE INOVA SIMPLES (I.S.)"
+}

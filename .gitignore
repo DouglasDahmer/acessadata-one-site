@@ -1,0 +1,29 @@
+# Backups e arquivos temporarios
+_backups/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.tmp
+*.bak
+*.backup_*
+
+# Ambientes Python
+.venv/
+venv/
+.pytest_cache/
+
+# Configuracoes e credenciais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Arquivos do sistema
+Thumbs.db
+.DS_Store
+# Distribuicao gerada pelo build; nao versionar
+/dist/
