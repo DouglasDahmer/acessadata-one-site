@@ -1,4 +1,72 @@
-# AcessaData-ONE v4.7 — Interface simplificada
+# AcessaData-ONE — Site institucional
+
+Site institucional da **AcessaData-ONE**, com foco comercial em Agricultura de Precisão,
+visualização de dados e demonstração metodológica por meio de um estudo de caso.
+
+**Produção:** https://acessadata-one.com.br/
+**Código-fonte público:** https://github.com/DouglasDahmer/acessadata-one-site
+**Hospedagem:** Cloudflare Pages, projeto `acessadata-one`, implantação **Direct Upload**.
+
+## Arquitetura atual
+
+| Página | Rota pública | Finalidade |
+|---|---|---|
+| Homepage | `/` | Serviços institucionais e Agricultura de Precisão |
+| Storytelling | `/storytelling/` | Estudo de caso e visualizações interativas |
+| Relatório Quarto | `/relatorios/acessadata-health-quarto` | Resultados agregados, método e limitações |
+
+A navegação ocorre da homepage para o Storytelling, e deste para o relatório Quarto.
+A distribuição homologada contém **49 arquivos**, dos quais **3 HTML**; `_headers`
+e `_redirects` são arquivos de configuração interpretados pelo Cloudflare Pages.
+
+## Como gerar e testar localmente
+
+Requisitos: Python 3 e Git. Execute na **raiz do repositório**, com `dist/`
+ausente ou vazia:
+
+```powershell
+python -B build.py
+if ($LASTEXITCODE -ne 0) { throw "Falha no build" }
+python -B -m unittest discover -s . -p "test_*.py" -v
+if ($LASTEXITCODE -ne 0) { throw "Falha nos testes" }
+python -m http.server 8000 --bind 127.0.0.1 --directory dist
+```
+
+O último baseline de integração teve **93/93 testes**, **49/49 hashes** do
+pacote e **47/47 recursos HTTPS** auditados em Production. Esses números são
+históricos, não garantias automáticas de futuras versões. O gerador recusa
+`dist/` não vazia para evitar mistura de versões; não apague uma distribuição
+existente sem preservar suas evidências e confirmar seu destino.
+
+## Versionamento, publicação e limites
+
+Leia **[OPERACAO_PUBLICACAO.md](OPERACAO_PUBLICACAO.md)** antes de editar,
+versionar ou publicar. O GitHub mantém o **código-fonte**; publicar um commit
+na `main` **não implanta** automaticamente no Cloudflare Pages (Direct Upload).
+O histórico público começou com um snapshot homologado; o clone histórico local
+possui outra ancestralidade. **Não faça merge, rebase nem push forçado entre
+esses históricos sem uma migração separada e auditada.**
+
+Os recursos de terceiros e seus textos de licença estão identificados em
+**[LICENCAS_TERCEIROS.md](LICENCAS_TERCEIROS.md)**. Algumas atribuições e
+versões exatas do Quarto/Tippy.js ainda exigem conferência; o inventário não
+certifica conformidade jurídica completa. A visibilidade pública deste
+repositório **não concede automaticamente uma licença para reutilizar o código
+autoral**, e as licenças de terceiros são independentes.
+
+O estudo epidemiológico publica agregados com ressalvas de fonte e método;
+não substitui a auditoria dos microdados originais nem comprova causalidade.
+A acessibilidade completa requer avaliação formal adicional.
+
+---
+
+## Histórico documental — versões anteriores
+
+As notas abaixo foram preservadas por rastreabilidade. **Não utilize os
+caminhos, comandos de instalação ou endereços legados como procedimento atual**;
+para manutenção e publicação, siga as seções acima e o guia operacional.
+
+### v4.7 — Interface simplificada
 
 Veja `ALTERACOES_v4_7.md` para as mudanças, instruções e validações.
 
@@ -6,7 +74,7 @@ Veja `ALTERACOES_v4_7.md` para as mudanças, instruções e validações.
 
 Os testes 48, 49 e 50 da v4.5 exigiam acidentalmente a biblioteca Beautiful Soup 4 (bs4), nao incluida como dependencia do projeto. Agora os testes usam somente html.parser da biblioteca padrao Python. Os arquivos do site, imagens, dados e mapa dos 17 pontos da arvore permanecem iguais a v4.5. Executar: `python build.py` e `python -m unittest test_site -v`.
 
-# AcessaData-ONE — Site v4.3, refinamento da árvore interativa
+### v4.3 — refinamento da árvore interativa
 
 A página mantém a árvore do logotipo original do usuário. Seus **17 círculos são links**.
 No desktop, **passar o mouse ou focar com Tab** mostra título, descrição e indicação de ação;
